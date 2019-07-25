@@ -24,7 +24,9 @@ import { MenuController } from '@ionic/angular';
 })
 export class AppModule {
 
-  constructor(private menu: MenuController) { }
+  constructor(
+    private menu: MenuController
+    ) { }
 
   openFirst() {
    // this.menu.enable(true, 'first');
@@ -33,3 +35,4 @@ export class AppModule {
   }
 
 }
+

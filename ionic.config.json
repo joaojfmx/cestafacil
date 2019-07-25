@@ -1,5 +1,7 @@
 {
   "name": "cestafacil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
