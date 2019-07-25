@@ -19,6 +19,11 @@ export class AppComponent {
       title: 'Sobre',
       url: '/sobre',
       icon: 'code-working'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'contact'
     }
   ];
 

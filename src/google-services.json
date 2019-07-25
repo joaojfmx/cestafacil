@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "403397323585",
+    "firebase_url": "https://cestafacil-ae9f1.firebaseio.com",
+    "project_id": "cestafacil-ae9f1",
+    "storage_bucket": "cestafacil-ae9f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403397323585:android:fced8a3ff954433e",
+        "android_client_info": {
+          "package_name": "io.cesta.facil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403397323585-ehen0us34akin10bfuhjp3j8rpgu2ug4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVNS-DwpzBVVDYqMkcWeOdCmITL8ehRXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403397323585-ehen0us34akin10bfuhjp3j8rpgu2ug4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

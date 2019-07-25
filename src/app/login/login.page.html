@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img id="basket" src="/assets/basket.png"></ion-img>
+
+
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="Usuario" tyoe="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="pws" placeholder="Senha" type="password"></ion-input>
+  </ion-item>
+<!--------------------------------------------------------->
+
+  <ion-button color="danger" expand="block" fill="outline" padding (click)="login()">
+    Logar
+  </ion-button>
+
+  <ion-button routerLink="/cadastrese" expand="block" fill="outline" padding>
+    Cadastre-se
+  </ion-button>
+
+  <ion-button color="success" fill="outline" id="google" padding (click)="loginGoogle()">
+    <ion-img id="googleico" src="/assets/google.png" padding></ion-img>
+    Entrar com a conta do Google
+  </ion-button>
+
+</ion-content>
