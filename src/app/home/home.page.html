@@ -1,14 +1,79 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar  >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Cesta Fácil
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <!-- Selecionar supermercado -->
+
+<ion-row>
+  <ion-col size="12" size-md>
+  <ion-item class="arre">
+          <ion-icon class="fundowhite" name="cart"></ion-icon>
+      <ion-label class="fundowhite"> &nbsp; Seu supermercado escolhido é</ion-label>
+      <ion-select class="fundowhite" placeholder="Escolha um">
+        <ion-select-option value="1">Carrefour</ion-select-option>
+        <ion-select-option value="2">Vianense</ion-select-option>
+        <ion-select-option value="3">Guanabara</ion-select-option>
+        <ion-select-option value="4">Extra</ion-select-option>
+      </ion-select>
+  
+  </ion-item>
+  </ion-col>
+</ion-row>
+
+
+<!-- card -->
+<div class="containerex">
+   <div class="image">
+      <div class="texto">
+          <h1>Descontos exclusivos!</h1>
+           <p>Você pode selecionar os produtos que mais tem interesse e com base nisso o aplicativo trará descontos exclusivos nesses produtos, quanto mais você comprar mais chance de ganhar descontos
+          </p>
+      </div>
+    </div>
   </div>
+
+<!-- array mercado -->
+    <ion-row>
+      <ion-col size="6" size-md>
+        <ion-card class="welcome-card">
+          <ion-img src="/assets/refri.jpg"></ion-img>
+
+        <ion-card-header>
+           
+        <ion-card-title>Refrigerante 3 litros</ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+          <p> R$ 7,50</p>
+        </ion-card-content>
+      </ion-card>
+
+
+    </ion-col>
+    <ion-col size="6" size-md>
+        <ion-card class="welcome-card">
+            <ion-img src="/assets/refri.jpg"></ion-img>
+            <ion-card-header>
+               
+              <ion-card-title>Refrigerante 2 litros</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p> R$ 6,50</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+
+    </ion-row>
+
+-->
+
 </ion-content>
