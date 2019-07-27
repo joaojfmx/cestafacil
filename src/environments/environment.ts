@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyCKjgbayicS_D6NOkz-Y2HffW1jOL1Kr1c',
+    apiKey: "AIzaSyCKjgbayicS_D6NOkz-Y2HffW1jOL1Kr1c",
     authDomain: "cestafacil-ae9f1.firebaseapp.com",
     databaseURL: "https://cestafacil-ae9f1.firebaseio.com",
     projectId: "cestafacil-ae9f1",

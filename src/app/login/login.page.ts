@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.afAuth);
+   // console.log(this.afAuth);
   }
 
   onSubmit(form) {
