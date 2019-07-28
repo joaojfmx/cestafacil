@@ -9,7 +9,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="afAuth.user | async as user; else showLogin" padding>
+     <!--afAuth.authState | async as authUser" -->
+  
+      
+      <!-- {{authUser | json}} << EXIBE ARRAY JSON DE INFORMAÇÕES SOBRE A CONTA GOOGLE -->
+    
+    <ion-item>
+      <ion-avatar>
+        <img src="{{user.photoURL}}">
+      </ion-avatar>
+      <ion-label>{{user.displayName}}</ion-label>
+      <ion-label>{{user.email}}</ion-label>
+    </ion-item>
+    <ion-button expand="block" fill="outline" routerLink="/" (click)=" logout()" margin-top>Sair</ion-button>
+  </ion-content>
+
+<ng-template #showLogin>
+  <ion-content>
   <ion-img id="basket" src="/assets/basket.png"></ion-img>
 
 
@@ -20,7 +37,7 @@
   <ion-item>
     <ion-input [(ngModel)]="pws" placeholder="Senha" type="password"></ion-input>
   </ion-item>
-<!--------------------------------------------------------->
+  <!--------------------------------------------------------->
 
   <ion-button color="danger" expand="block" fill="outline" padding (click)="login()">
     Logar
@@ -35,4 +52,9 @@
     Entrar com a conta do Google
   </ion-button>
 
+  // logout
+  <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do google</ion-button>
+  <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do firebase</ion-button>
+
 </ion-content>
+</ng-template>

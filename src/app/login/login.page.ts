@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-   // console.log(this.afAuth);
+    // console.log(this.afAuth);
   }
 
   onSubmit(form) {
@@ -35,27 +35,27 @@ export class LoginPage implements OnInit {
   login() {
     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.pws).then(
       res => {
-        this.router.navigate(["/"]);
+       // this.router.navigate(["/"]);
         console.log(res);
       },
       err => {
-        this.presentAlert("Erro!", "Usuario não encontrado!");
         console.log(err);
+        this.msgerror(err.code);
       }
     );
 
   }
 
-  loginGoogle() {
+ async loginGoogle() {
     console.log(this.device.platform);
 
-    if (this.device.platform == "browser")
-      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    if (this.device.platform == 'browser')
+      {this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());}
     else
-      this.loginGoogleMobile();
+      {this.loginGoogleMobile();}
 
     if (this.afAuth.user) {
-      this.router.navigate(['/']);
+    //  this.router.navigate(['/']);
     }
 
   }
@@ -70,14 +70,25 @@ export class LoginPage implements OnInit {
     this.afAuth.auth.signOut();
   }
 
-  //Alertas--------------------------------
-  async presentAlert(tipo: string, texto: string) {
+  // Alertas--------------------------------
+  async presentAlert(texto: string) {
     const alert = await this.alertController.create({
-      header: tipo,
-      //subHeader: 'Subtitle',
       message: texto,
       buttons: ['OK']
     });
     await alert.present();
   }
+
+  msgerror(error: string) {
+    let texto: string;
+    if (error === 'auth/wrong-password') {
+      texto = "senha incorreta";
+    } else if (error = 'auth/user-not-found') {
+      texto = "Usuário não cadastrado";
+    } else if (error = 'auth/popup-closed-by-user') {
+      texto = "Usuário não cadastrado";
+    }
+    this.presentAlert(texto);
+  }
 }
+
