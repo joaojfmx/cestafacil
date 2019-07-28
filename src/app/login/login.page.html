@@ -10,51 +10,71 @@
 </ion-header>
 
 <ion-content *ngIf="afAuth.user | async as user; else showLogin" padding>
-     <!--afAuth.authState | async as authUser" -->
+  <!--afAuth.authState | async as authUser" -->
+
+
+  <!-- {{authUser | json}} << EXIBE ARRAY JSON DE INFORMAÇÕES SOBRE A CONTA GOOGLE -->
+
+  <ion-item>
+    <ion-avatar>
+      <img src="{{user.photoURL}}">
+    </ion-avatar>
+   
+  </ion-item>
+  <ion-item><ion-label>{{user.displayName}}</ion-label></ion-item>
+  <ion-item><ion-label>{{user.email}}</ion-label></ion-item>
   
-      
-      <!-- {{authUser | json}} << EXIBE ARRAY JSON DE INFORMAÇÕES SOBRE A CONTA GOOGLE -->
-    
-    <ion-item>
-      <ion-avatar>
-        <img src="{{user.photoURL}}">
-      </ion-avatar>
-      <ion-label>{{user.displayName}}</ion-label>
-      <ion-label>{{user.email}}</ion-label>
-    </ion-item>
-    <ion-button expand="block" fill="outline" routerLink="/" (click)=" logout()" margin-top>Sair</ion-button>
-  </ion-content>
+  <ion-button expand="block" fill="outline" routerLink="/" (click)=" logout()" margin-top>Sair</ion-button>
+</ion-content>
 
 <ng-template #showLogin>
   <ion-content>
-  <ion-img id="basket" src="/assets/basket.png"></ion-img>
+    <ion-row>
+      <ion-col size="12" size-md>
+        <ion-img id="basket" src="/assets/basket.png"></ion-img>
 
 
-  <ion-item>
-    <ion-input [(ngModel)]="email" placeholder="Usuario" tyoe="email"></ion-input>
-  </ion-item>
+        <ion-item>
+         
+          <ion-input 
+            [(ngModel)]="email"
+            placeholder=" &nbsp;Usuário"
+            type="email"
+            >
+          </ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-input [(ngModel)]="pws" placeholder="Senha" type="password"></ion-input>
-  </ion-item>
-  <!--------------------------------------------------------->
+        <ion-item>
+         
+          <ion-input  
+            
+            [(ngModel)]="pws" 
+            placeholder=" &nbsp;Senha"
+            type="password"
+           
+            >
+          </ion-input>
+        </ion-item>
+        <!--------------------------------------------------------->
 
-  <ion-button color="danger" expand="block" fill="outline" padding (click)="login()">
-    Logar
-  </ion-button>
+        <ion-button color="danger" expand="block" fill="outline" padding (click)="login()">
+          Logar
+        </ion-button>
 
-  <ion-button routerLink="/cadastrese" expand="block" fill="outline" padding>
-    Cadastre-se
-  </ion-button>
+        <ion-button routerLink="/cadastrese" expand="block" fill="outline" padding>
+          Cadastre-se
+        </ion-button>
 
-  <ion-button color="success" fill="outline" id="google" padding (click)="loginGoogle()">
-    <ion-img id="googleico" src="/assets/google.png" padding></ion-img>
-    Entrar com a conta do Google
-  </ion-button>
-
-  // logout
-  <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do google</ion-button>
-  <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do firebase</ion-button>
-
-</ion-content>
+        <ion-button color="success" fill="outline" id="google" padding (click)="loginGoogle()">
+          <ion-img id="googleico" src="/assets/google.png" padding></ion-img>
+          Entrar com a conta do Google
+        </ion-button>
+        <!--
+    // logout
+    <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do google</ion-button>
+    <ion-button color="success" fill="outline" id="google" padding (click)="logout()">sair do firebase</ion-button>
+-->
+      </ion-col>
+    </ion-row>
+  </ion-content>
 </ng-template>

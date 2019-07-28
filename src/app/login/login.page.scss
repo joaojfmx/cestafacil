@@ -1,5 +1,5 @@
 #caixinha{
-    text-align: center;
+    border-color: #791919 !important;
 }
 #botaologar{
     color: red;
@@ -17,4 +17,21 @@
 }
 #ou{
     padding: 37%;
+}
+ion-item{
+    --highlight-color-valid: #ffffff;
+    --highlight-color-invalid:#ffffff;
+    --highlight-color-focused:#ffffff;
+}
+ion-input{ 
+    // border: solid;
+  //  border-color: #791919 !important;
+    background: #ffffff !important;
+    border: solid !important;
+    border-width: 0px 0px 2px 2px !important;
+    border-color: #851616 !important;
+    box-shadow: none !important;
+    border-radius: 2px !important;
+    //padding: 2px;
+    margin: 5px; 
 }

@@ -25,7 +25,8 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.log(this.afAuth);
+    console.log(this.afAuth);
+    console.log(this.device.platform);
   }
 
   onSubmit(form) {
@@ -46,16 +47,22 @@ export class LoginPage implements OnInit {
 
   }
 
- async loginGoogle() {
-    console.log(this.device.platform);
+  loginGoogle() {
+    
 
-    if (this.device.platform == 'browser')
+    if (this.device.platform === 'browser')
       {this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());}
     else
-      {this.loginGoogleMobile();}
+      {this.loginGoogleMobile();
+      }
 
     if (this.afAuth.user) {
-    //  this.router.navigate(['/']);
+     // this.router.navigate(['/login']);
+      this.alertController.create({
+        message: "logou",
+        buttons: ['OK']
+      });
+
     }
 
   }
@@ -86,6 +93,8 @@ export class LoginPage implements OnInit {
     } else if (error = 'auth/user-not-found') {
       texto = "Usuário não cadastrado";
     } else if (error = 'auth/popup-closed-by-user') {
+      texto = "Usuário não cadastrado";
+    } else if (error = 'auth/invalid-email') {
       texto = "Usuário não cadastrado";
     }
     this.presentAlert(texto);
