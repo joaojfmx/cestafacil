@@ -57,18 +57,14 @@ export class LoginPage implements OnInit {
       }
 
     if (this.afAuth.user) {
-     // this.router.navigate(['/login']);
-      this.alertController.create({
-        message: "logou",
-        buttons: ['OK']
-      });
-
+      this.router.navigate(['/login']);
     }
 
   }
 
   loginGoogleMobile() {
-    this.googlePlus.login({})
+    //this.googlePlus.login({})
+    this.webGoogleLogin()
       .then(res => console.log(res))
       .catch(err => console.error(err));
   }

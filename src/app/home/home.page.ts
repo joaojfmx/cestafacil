@@ -7,5 +7,5 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor() {}
+  constructor() { }
 }
