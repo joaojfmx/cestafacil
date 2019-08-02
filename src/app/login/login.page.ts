@@ -63,8 +63,8 @@ export class LoginPage implements OnInit {
   }
 
   loginGoogleMobile() {
-    //this.googlePlus.login({})
-    this.webGoogleLogin()
+    this.googlePlus.login({})
+    
       .then(res => console.log(res))
       .catch(err => console.error(err));
   }
