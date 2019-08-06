@@ -23,6 +23,7 @@
     "@angular/router": "^7.2.2",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/device": "^5.10.0",
+    "@ionic-native/firebase": "^5.11.0",
     "@ionic-native/firebase-authentication": "^5.10.0",
     "@ionic-native/google-plus": "^5.10.0",
     "@ionic-native/splash-screen": "^5.0.0",
@@ -84,7 +85,8 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-googleplus": {
-        "PLAY_SERVICES_VERSION": "11.8.0"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.403397323585-dds9mvvlrnd5kltfaoiulm3mglkpoucm",
+        "WEB_APPLICATION_CLIENT_ID": "403397323585-dds9mvvlrnd5kltfaoiulm3mglkpoucm.apps.googleusercontent.com"
       },
       "cordova-plugin-firebase-authentication": {
         "FIREBASE_AUTH_VERSION": "18.0.+"

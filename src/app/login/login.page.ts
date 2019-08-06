@@ -5,6 +5,7 @@ import { Router } from '@angular/router/';
 import { AlertController } from '@ionic/angular';
 import { Device } from '@ionic-native/device/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,17 +22,20 @@ export class LoginPage implements OnInit {
     private router: Router,
     public alertController: AlertController,
     private googlePlus: GooglePlus,
-    private device: Device
+    private device: Device,
+   // public auth: AuthService
   ) { }
 
   ngOnInit() {
-    console.log(this.afAuth);
-    console.log(this.device.platform);
+ //   console.log(this.afAuth);
+//    console.log(this.device.platform);
   }
 
   onSubmit(form) {
     this.login();
   }
+
+
 
   login() {
     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.pws).then(
@@ -48,8 +52,6 @@ export class LoginPage implements OnInit {
   }
 
   loginGoogle() {
-    
-
     if (this.device.platform === 'browser')
       {this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());}
     else
@@ -64,7 +66,6 @@ export class LoginPage implements OnInit {
 
   loginGoogleMobile() {
     this.googlePlus.login({})
-    
       .then(res => console.log(res))
       .catch(err => console.error(err));
   }
@@ -95,5 +96,6 @@ export class LoginPage implements OnInit {
     }
     this.presentAlert(texto);
   }
+
 }
 
