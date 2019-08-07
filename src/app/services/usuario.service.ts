@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
-import { User } from '../services/user.model';
+import { Usuario } from '../services/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  /*
-  uid: string;
-  nome: string;
-  email: string;
-  pws: string;
-  ativo: boolean = true;
-  */
+
   constructor(
     private bd: AngularFireDatabase
   ) { }

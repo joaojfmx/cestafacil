@@ -1,12 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 import { ViacepService } from '../services/viacep.service';
-import { AuthService } from '../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
-import { User } from '../services/user.model';
+import { Usuario } from '../services/user.model';
+
 
 @Component({
   selector: 'app-add-usuario',
@@ -14,27 +14,27 @@ import { User } from '../services/user.model';
   styleUrls: ['./add-usuario.page.scss'],
 })
 export class AddUsuarioPage implements OnInit {
+  
   private cep;
   private endereco:any = {};
-  
   public usuario: Usuario;
   public conf: string;
 
 
 
   constructor(
-    public navCtrl: NavController,
+    // public navCtrl: NavController,
     private viacep: ViacepService,
     private router: Router,
     public afAuth: AngularFireAuth,
     protected usuarioService: UsuarioService,
     protected alertController: AlertController,
-    public user: User
-   // public auth10: AuthService
+  //  public user: Usuario,
+  //  public auth: AuthService
     ) { }
 
   ngOnInit() {
-    this.usuario = new User
+    this.usuario = new Usuario
   }
 
 

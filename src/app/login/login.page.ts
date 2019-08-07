@@ -5,7 +5,6 @@ import { Router } from '@angular/router/';
 import { AlertController } from '@ionic/angular';
 import { Device } from '@ionic-native/device/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
-import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
