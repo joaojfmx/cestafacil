@@ -9,49 +9,61 @@
   </style>
 </ion-header>
 <ion-content>
-    <ion-row>
-      <ion-col size="12" size-md>
-        <!--
+  <ion-row>
+    <ion-col size="12" size-md>
+
+      <form #fc="ngForm" (ngSubmit)="onSubmit(fc)">
         <ion-item>
-          <ion-input placeholder="&nbsp;nome">&nbsp;</ion-input>
+          <ion-label>
+            <h2>CRIAR CONTA</h2>
+          </ion-label>
         </ion-item>
+
         <ion-item>
-          <ion-input placeholder="&nbsp;sobrenome">&nbsp;</ion-input>
-        </ion-item> 
-        -->
-        <ion-item>
-          <ion-input  placeholder="&nbsp;E-mail" [(ngModel)]="email">&nbsp;</ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="&nbsp;Senha" [(ngModel)]="pws" type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="&nbsp;Confirmar senha" [(ngModel)]="pws2" type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input maxlength="8" placeholder="&nbsp;CEP" [(ngModel)]="cep" (keyup)="getEndereco()"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input>&nbsp;{{endereco.logradouro}}</ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input>&nbsp;N°:</ion-input>
+        
+            <ion-input 
+            placeholder="&nbsp;Nome" 
+            type="text" name="nome" [(ngModel)]="usuario.nome" required></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-input>&nbsp;{{endereco.bairro}}</ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input>&nbsp;{{endereco.localidade}}</ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input>&nbsp;{{endereco.uf}}</ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input maxlength="11" placeholder="Telefone">&nbsp;</ion-input>
-          </ion-item>
-          <ion-button color="danger" expand="block" shape="round" type="submit" padding>
-            Cadastrar
-          </ion-button>
-      </ion-col>
-    </ion-row>
+
+        <ion-item>
+          <ion-input 
+          placeholder="&nbsp;E-mail" 
+          [(ngModel)]="usuario.email" 
+          [ngModelOptions]="{standalone: true}"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input 
+          placeholder="&nbsp;Senha" 
+          type="password" name="pws" [(ngModel)]="usuario.pws" #p="ngModel" minlength="6" required
+          
+           >
+          </ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="p.invalid && p.dirty">
+            <strong>Senha muito curta!</strong>
+        </ion-text>
+
+        <ion-item>
+          <ion-input
+          placeholder="&nbsp;Confirmar Senha" 
+          type="password" name="conf" ngModel="conf" #c="ngModel" minlength="6" required
+          ></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="p.value != c.value">
+          <strong>Senhas diferentes!</strong>
+        </ion-text>
+
+
+        <ion-button type="submit" color="danger" expand="block" [disabled]="fc.invalid || (p.value != c.value)" shape="round" padding>
+          Cadastrar
+        </ion-button>
+
+      </form>
+    </ion-col>
+  </ion-row>
 </ion-content>
