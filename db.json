@@ -1,0 +1,179 @@
+{
+    "açougue":[
+        {
+            "id":1,
+            "produto":"Coca cola 2l",
+            "img": "asssdasdsda",
+            "info":"2L",
+            "preco":"R$ 5,50",
+        },
+        {
+            "id":2,
+            "produto":"Pepsi",
+            "img": "asssdasdsda",
+            "info":"3L",
+            "preco":"R$ 6,99",
+            }
+        ],
+    "bombom":[
+            {
+                "id":1,
+                "produto":"Coca cola 2l",
+                "img": "asssdasdsda",
+                "info":"2L",
+                "preco":"R$ 5,50",
+            },
+            {
+                "id":2,
+                "produto":"Coca cola",
+                "img": "asssdasdsda",
+                "info":"3L",
+                "preco":"R$ 6,99",
+            }
+    ],
+    "conservas":[
+            {
+                "id":1,
+                "produto":"Rexona ",
+                "img": "asssdasdsda",
+                "info":"2L",
+                "preco":"R$ 5,50",
+            },
+            {
+                "id":2,
+                "produto":"Clear",
+                "img": "asssdasdsda",
+                "info":"3L",
+                "preco":"R$ 6,99",
+            }
+    ],   
+    "higiêne pessoal":[
+        {
+            "id":1,
+            "produto":"Coca cola 2l",
+            "img": "asssdasdsda",
+            "info":"2L",
+            "preco":"R$ 5,50",
+        },
+        {
+            "id":2,
+            "produto":"Pepsi",
+            "img": "asssdasdsda",
+            "info":"3L",
+            "preco":"R$ 6,99",
+            }
+        ],
+        "bebidas":[
+            {
+                "id":1,
+                "produto":"Coca cola 2l",
+                "img": "asssdasdsda",
+                "info":"2L",
+                "preco":"R$ 5,50",
+            },
+            {
+                "id":2,
+                "produto":"Pepsi",
+                "img": "asssdasdsda",
+                "info":"3L",
+                "preco":"R$ 6,99",
+                }
+            ],
+         "embutidos":[
+             {
+                 "id":1,
+                 "produto":"Coca cola 2l",
+                  "img": "asssdasdsda",
+                  "info":"2L",
+                  "preco":"R$ 5,50",
+             },
+            {
+                "id":2,
+                  "produto":"Pepsi",
+                   "img": "asssdasdsda",
+                  "info":"3L",
+                  "preco":"R$ 6,99",
+                   }
+            ],
+              "limpeza":[
+            {
+                "id":1,
+                "produto":"Coca cola 2l",
+                "img": "asssdasdsda",
+                 "info":"2L",
+                   "preco":"R$ 5,50",
+                  },
+                   {
+                  "id":2,
+                  "produto":"Pepsi",
+                  "img": "asssdasdsda",
+                  "info":"3L",
+                  "preco":"R$ 6,99",
+                  }
+              ],
+              "biscoito":[
+                  {
+                      "id":1,
+                      "produto":"Coca cola 2l",
+                      "img": "asssdasdsda",
+                     "info":"2L",
+                     "preco":"R$ 5,50",
+                  },
+                 {
+                     "id":2,
+                    "produto":"Pepsi",
+                       "img": "asssdasdsda",
+                       "info":"3L",
+                       "preco":"R$ 6,99",
+                       }
+                   ],
+                   "frios e laticínios":[
+                    {
+                        "id":1,
+                        "produto":"Coca cola 2l",
+                        "img": "asssdasdsda",
+                       "info":"2L",
+                       "preco":"R$ 5,50",
+                    },
+                   {
+                       "id":2,
+                      "produto":"Pepsi",
+                         "img": "asssdasdsda",
+                         "info":"3L",
+                         "preco":"R$ 6,99",
+                         }
+                     ],
+                     "massas":[
+                        {
+                            "id":1,
+                            "produto":"Coca cola 2l",
+                            "img": "asssdasdsda",
+                           "info":"2L",
+                           "preco":"R$ 5,50",
+                        },
+                       {
+                           "id":2,
+                          "produto":"Pepsi",
+                             "img": "asssdasdsda",
+                             "info":"3L",
+                             "preco":"R$ 6,99",
+                             }
+                         ],
+                         "salgados":[
+                            {
+                                "id":1,
+                                "produto":"Coca cola 2l",
+                                "img": "asssdasdsda",
+                               "info":"2L",
+                               "preco":"R$ 5,50",
+                            },
+                           {
+                               "id":2,
+                              "produto":"Pepsi",
+                                 "img": "asssdasdsda",
+                                 "info":"3L",
+                                 "preco":"R$ 6,99",
+                                 }
+                             ]
+
+}

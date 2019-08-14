@@ -11,7 +11,6 @@
 
 <ion-content>
   <!-- Selecionar supermercado -->
-
   <ion-row>
     <ion-col size="12" size-md>
       <ion-item class="arre">
@@ -23,11 +22,9 @@
           <ion-select-option value="3">Guanabara</ion-select-option>
           <ion-select-option value="4">Extra</ion-select-option>
         </ion-select>
-
       </ion-item>
     </ion-col>
   </ion-row>
-
 
   <!-- card -->
   <div class="containerex">
@@ -42,8 +39,8 @@
   </div>
 
   <!-- array mercado -->
-  <ion-row>
-   <!-- -- <ion-col size="6" size-md>
+  <ion-row ngFor="let p produtos">
+   <!--  <ion-col size="6" size-md>
       <ion-card class="welcome-card">
         <ion-img src="/assets/refri.jpg"></ion-img>
 
@@ -72,10 +69,7 @@
       </ion-card>
     </ion-col>  -->
     
-    <ion-img id="war" (click)=war() src="http://images.uncyc.org/pt/9/9a/Warmachine-win1.gif"></ion-img>
+    <!--<ion-img id="war" (click)=war() src="http://images.uncyc.org/pt/9/9a/Warmachine-win1.gif"></ion-img>-->
   
   </ion-row>
-
-
-
 </ion-content>
