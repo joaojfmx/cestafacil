@@ -3,9 +3,12 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+
 import { Loja } from '../model/loja';
-
-
+import { Usuario } from './user.model';
 
 
 @Injectable({
@@ -13,22 +16,27 @@ import { Loja } from '../model/loja';
 })
 export class LojasService {
 
-  
+
 
   constructor(
-    private bd: AngularFireDatabase
+    private bd: AngularFireDatabase,
+    private afs: AngularFirestore,
+    private afAuth: AngularFireAuth
+
     ) { }
 
-  save(loja: Loja) {
-    return this.bd.list("lojas").push(loja);
-  }
-
   getAll() {
-    return this.bd.list<Loja>("lojas").snapshotChanges()
+    return this.afs.collection("Guanabara").snapshotChanges()
       .pipe(
         map(changes =>
-          changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+          changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
         )
       )
   }
+
+  public saveAuth(usuario: Usuario) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(usuario.email, usuario.pws);
+  }
 }
+
+

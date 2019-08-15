@@ -39,23 +39,24 @@
   </div>
 
   <!-- array mercado -->
-  <ion-row ngFor="let p produtos">
-   <!--  <ion-col size="6" size-md>
+  <ion-row *ngIf="lojas$ | async as lojas" >
+    <ion-col size="6" size-md *ngFor="let p of lojas">
       <ion-card class="welcome-card">
-        <ion-img src="/assets/refri.jpg"></ion-img>
+        <ion-img src="{{p.img}}"></ion-img>
 
         <ion-card-header>
 
-          <ion-card-title>Refrigerante 3 litros</ion-card-title>
+          <ion-card-title>{{p.nome}}</ion-card-title>
 
         </ion-card-header>
         <ion-card-content>
-          <p> R$ 7,50</p>
+          <p>{{p.preco}}</p>
         </ion-card-content>
       </ion-card>
 
 
     </ion-col>
+    <!--
     <ion-col size="6" size-md>
       <ion-card class="welcome-card">
         <ion-img src="/assets/refri.jpg"></ion-img>
