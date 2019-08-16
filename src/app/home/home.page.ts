@@ -16,8 +16,23 @@ export class HomePage implements OnInit {
     private lojaService: LojasService
   ) { }
 
+
+  getMercado(){
+
+    let Mercado: string
+    if ( Mercado == "Vianense")
+    {
+      console.log("foi ")
+    }
+    else {
+      console.log();
+    }
+  }
+
   ngOnInit() {
     this.lojas$ = this.lojaService.getAll();
+    console.log(this.lojas$);
+    
   }
 
 }

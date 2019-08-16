@@ -23,19 +23,15 @@ export class LojasService {
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth
 
-    ) { }
+  ) { }
 
   getAll() {
-    return this.afs.collection("Guanabara").snapshotChanges()
+    return this.afs.collection('Carrefour').snapshotChanges()
       .pipe(
         map(changes =>
           changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
         )
       )
-  }
-
-  public saveAuth(usuario: Usuario) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(usuario.email, usuario.pws);
   }
 }
 

@@ -40,10 +40,10 @@ export class AppComponent {
       // this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      if (cordova.platformId === 'android') {
+      //if (cordova.platformId === 'android') {
       //  this.statusBar.overlaysWebView(true);
-        this.statusBar.backgroundColorByHexString('#580b0b');
-      }
+      //   this.statusBar.backgroundColorByHexString('#580b0b');
+      //}
     });
   }
 }

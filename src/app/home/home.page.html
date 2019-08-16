@@ -17,10 +17,10 @@
         <ion-icon class="fundowhite" name="cart"></ion-icon>
         <ion-label class="fundowhite"> &nbsp; Seu supermercado escolhido é</ion-label>
         <ion-select class="fundowhite" placeholder="Escolha um">
-          <ion-select-option value="1">Carrefour</ion-select-option>
-          <ion-select-option value="2">Vianense</ion-select-option>
-          <ion-select-option value="3">Guanabara</ion-select-option>
-          <ion-select-option value="4">Extra</ion-select-option>
+          <ion-select-option value="Carrefour">Carrefour</ion-select-option>
+          <ion-select-option value="Vianense">Vianense</ion-select-option>
+          <ion-select-option value="Guanabara">Guanabara</ion-select-option>
+          <ion-select-option value="Extra">Extra</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-col>
@@ -39,38 +39,21 @@
   </div>
 
   <!-- array mercado -->
-  <ion-row *ngIf="lojas$ | async as lojas" >
+  <ion-row *ngIf="lojas$ | async as lojas"  >
     <ion-col size="6" size-md *ngFor="let p of lojas">
-      <ion-card class="welcome-card">
-        <ion-img src="{{p.img}}"></ion-img>
-
+      <ion-card class="welcome-card" >
+        <ion-img [src]="p.img"></ion-img>
         <ion-card-header>
-
           <ion-card-title>{{p.nome}}</ion-card-title>
-
         </ion-card-header>
         <ion-card-content>
           <p>{{p.preco}}</p>
         </ion-card-content>
+        <ion-button expand="block">+ Carrinho</ion-button>
       </ion-card>
-
-
     </ion-col>
-    <!--
-    <ion-col size="6" size-md>
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/refri.jpg"></ion-img>
-        <ion-card-header>
 
-          <ion-card-title>Refrigerante 2 litros</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p> R$ 6,50</p>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>  -->
-    
     <!--<ion-img id="war" (click)=war() src="http://images.uncyc.org/pt/9/9a/Warmachine-win1.gif"></ion-img>-->
-  
+
   </ion-row>
 </ion-content>
