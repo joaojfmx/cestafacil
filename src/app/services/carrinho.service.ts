@@ -62,4 +62,11 @@ items: Produto[] = []
     console.log(this.items);
   }
 
+  removeItem(Produto) {
+    this.items.splice(this.items.indexOf(Produto), 1)
+    //salva na sessão
+    sessionStorage.setItem("cart", JSON.stringify(this.items))
+    console.log(this.items);
+  }
+
 }

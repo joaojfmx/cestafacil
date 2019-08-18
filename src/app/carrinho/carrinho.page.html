@@ -10,5 +10,25 @@
 </ion-header>
 
 <ion-content>
+     <div *ngIf="items().length">
+    <ion-row *ngFor="let item of items()" class="painelitem">
+      <ion-col size="4">
 
+            <ion-img class="imgprod" [src]="item.img"></ion-img>
+    
+      </ion-col>
+
+      <ion-col size="8">
+
+        <ion-item>
+          <ion-text class="nomeprod"><h5>{{item.nome}}</h5></ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text color="danger" class="nomeprod"><h1 class="nomeprod" style="font-weight: bold;">R$ {{item.preco}}</h1></ion-text>
+        </ion-item>
+        <button (click)="removeItem()" class="btnprod" ion-button>Remover do carrinho</button>
+      </ion-col>
+
+    </ion-row>
+  </div>
 </ion-content>

@@ -16,7 +16,6 @@
     //border: 5px solid !important;
     //border-color: #0c0074 !important;
 
-
   }
   .texto {
   
@@ -62,6 +61,18 @@ ion-item{
   left: 1%;
   height: 150px;
   z-index: 1;
+}
+.preco{
+  font-weight: bold;
+}
+
+.card{
+    border: 2px solid !important;
+    border-color: #8516163a !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+    padding: 5px;
+    margin: 2px;
 }
 
   

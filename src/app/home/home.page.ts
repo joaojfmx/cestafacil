@@ -34,7 +34,6 @@ export class HomePage implements OnInit {
   addCar(i, p) {
    this.prodService.addItem(p)
   }
-  
 
 }
 

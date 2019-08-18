@@ -6,6 +6,7 @@
     <ion-title>
       Cesta Fácil
     </ion-title>
+    <ion-icon slot="end" size="large" name="cart" [routerLink]="['/carrinho']"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -34,28 +35,27 @@
       <div class="texto">
         <h1>Descontos exclusivos!</h1>
         <p>Você pode selecionar os produtos que mais tem interesse e com base nisso o aplicativo trará descontos
-          exclusivos nesses produtos, quanto mais você comprar mais chance de ganhar descontos
+          exclusivos nesses produtos, quanto mais você comprar mais chance de ganhar descontos.
         </p>
       </div>
     </div>
   </div>
 
   <!-- array mercado -->
-  <ion-row *ngIf="lojas$ | async as lojas"  >
+
+  <ion-row *ngIf="lojas$ | async as lojas">
     <ion-col size="6" size-md *ngFor="let p of lojas">
-      <ion-card class="welcome-card" >
+      <ion-card class="card">
         <ion-img [src]="p.img"></ion-img>
         <ion-card-header>
           <ion-card-title id="nome">{{p.nome}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <p>{{p.preco}}</p>
+          <h1 class="preco">R$ {{p.preco}}</h1>
         </ion-card-content>
-        <ion-button expand="block" (click)="addCar(id, p)">+ Carrinho</ion-button>
+        <ion-button color="danger" expand="block" (click)="addCar(id, p)">+ Carrinho</ion-button>
       </ion-card>
     </ion-col>
-
-    <!--<ion-img id="war" (click)=war() src="http://images.uncyc.org/pt/9/9a/Warmachine-win1.gif"></ion-img>-->
-
   </ion-row>
+
 </ion-content>
