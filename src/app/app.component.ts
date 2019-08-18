@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'Home'
     },
     {
+      title: 'Carrinho',
+      url: '/carrinho',
+      icon: 'cart'
+    },
+    {
       title: 'Sobre',
       url: '/sobre',
       icon: 'code-working'
@@ -40,10 +45,9 @@ export class AppComponent {
       // this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      //if (cordova.platformId === 'android') {
-      //  this.statusBar.overlaysWebView(true);
-      //   this.statusBar.backgroundColorByHexString('#580b0b');
-      //}
+      if (cordova.platformId === 'android') {
+         this.statusBar.backgroundColorByHexString('#580b0b');
+      }
     });
   }
 }

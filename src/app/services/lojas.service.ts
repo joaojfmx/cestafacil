@@ -16,8 +16,6 @@ import { Usuario } from './user.model';
 })
 export class LojasService {
 
-
-
   constructor(
     private bd: AngularFireDatabase,
     private afs: AngularFirestore,
@@ -31,7 +29,7 @@ export class LojasService {
         map(changes =>
           changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
         )
-      )
+      );
   }
 }
 

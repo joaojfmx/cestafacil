@@ -27,6 +27,8 @@
   </ion-row>
 
   <!-- card -->
+
+  <!--barnner-->
   <div class="containerex">
     <div class="image">
       <div class="texto">
@@ -49,7 +51,7 @@
         <ion-card-content>
           <p>{{p.preco}}</p>
         </ion-card-content>
-        <ion-button expand="block">+ Carrinho</ion-button>
+        <ion-button expand="block" (click)="addCar(nome, preco)">+ Carrinho</ion-button>
       </ion-card>
     </ion-col>
 
