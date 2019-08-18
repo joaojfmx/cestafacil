@@ -46,12 +46,12 @@
       <ion-card class="welcome-card" >
         <ion-img [src]="p.img"></ion-img>
         <ion-card-header>
-          <ion-card-title>{{p.nome}}</ion-card-title>
+          <ion-card-title id="nome">{{p.nome}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <p>{{p.preco}}</p>
         </ion-card-content>
-        <ion-button expand="block" (click)="addCar(nome, preco)">+ Carrinho</ion-button>
+        <ion-button expand="block" (click)="addCar(id, p)">+ Carrinho</ion-button>
       </ion-card>
     </ion-col>
 
