@@ -6,7 +6,7 @@
     <ion-title>
       Cesta Fácil
     </ion-title>
-    <ion-icon slot="end" size="large" name="cart" [routerLink]="['/carrinho']"></ion-icon>
+    <ion-icon class="cartt" slot="end" size="large" name="cart" [routerLink]="['/carrinho']"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -53,9 +53,8 @@
         <ion-card-content>
           <h1 class="preco">R$ {{p.preco}}</h1>
         </ion-card-content>
-        <ion-button color="danger" expand="block" (click)="addCar(id, p)">+ Carrinho</ion-button>
+        <ion-button color="danger" expand="block" (click)="addCar(id, p)" (click)="presentToastWithOptions()" >+ Carrinho</ion-button>
       </ion-card>
     </ion-col>
   </ion-row>
-
 </ion-content>

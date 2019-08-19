@@ -55,12 +55,12 @@ ion-item{
   border-color: #ffffff;
 }
 
-#war{
-  position: absolute;
+.war{
+  position: fixed;
   bottom: 2%;
   left: 1%;
-  height: 150px;
-  z-index: 1;
+  //height: 100px;
+  z-index: 0;
 }
 .preco{
   font-weight: bold;
@@ -73,6 +73,10 @@ ion-item{
     border-radius: 10px !important;
     padding: 5px;
     margin: 2px;
+}
+.cartt{
+  padding: 5px;
+  margin: 2px;
 }
 
   

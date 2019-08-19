@@ -4,6 +4,7 @@ import { LojasService } from '../services/lojas.service';
 import { CarrinhoService } from '../services/carrinho.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class HomePage implements OnInit {
   constructor(
     private activeRouter: ActivatedRoute,
     private lojaService: LojasService,
-    private prodService: CarrinhoService
+    private prodService: CarrinhoService,
+    public toastController: ToastController
   ) {
     this.id = this.activeRouter.snapshot.paramMap.get('id');
     this.produto$ = this.prodService.get(this.id);
@@ -35,5 +37,32 @@ export class HomePage implements OnInit {
    this.prodService.addItem(p)
   }
 
+  // msg add carrinho
+
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+    //  header: 'OK',
+      message: 'Adicionando ao carrinho',
+      position: 'bottom',
+      duration: 3000,
+      buttons: [
+        {
+          side: 'start',
+          icon: 'cart',
+      //    text: 'Adicionando ao carrinho',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }, {
+          text: 'OK',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    toast.present();
+  }
 }
 
