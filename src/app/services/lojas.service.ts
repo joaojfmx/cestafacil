@@ -22,9 +22,42 @@ export class LojasService {
     private afAuth: AngularFireAuth
 
   ) { }
-
+/*
   getAll() {
     return this.afs.collection('Carrefour').snapshotChanges()
+      .pipe(
+        map(changes =>
+          changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
+        )
+      );
+  }
+  */
+ getCarrefour() {
+    return this.afs.collection('Carrefour').snapshotChanges()
+      .pipe(
+        map(changes =>
+          changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
+        )
+      );
+  }
+  getVianense() {
+    return this.afs.collection('Vianense').snapshotChanges()
+      .pipe(
+        map(changes =>
+          changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
+        )
+      );
+  }
+  getGuanabra() {
+    return this.afs.collection('Guanabara').snapshotChanges()
+      .pipe(
+        map(changes =>
+          changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))
+        )
+      );
+  }
+  getExtra() {
+    return this.afs.collection('Extra').snapshotChanges()
       .pipe(
         map(changes =>
           changes.map(c => ({ key: c.payload.doc.id, ...c.payload.doc.data() }))

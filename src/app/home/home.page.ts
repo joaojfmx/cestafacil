@@ -17,6 +17,7 @@ export class HomePage implements OnInit {
   protected lojas$: any;
   private produto$: Observable<any>;
   private id: string;
+  private selectcategory: anys;
 
   constructor(
     private activeRouter: ActivatedRoute,
@@ -26,22 +27,24 @@ export class HomePage implements OnInit {
   ) {
     this.id = this.activeRouter.snapshot.paramMap.get('id');
     this.produto$ = this.prodService.get(this.id);
-   }
+    this.selectcategory = "";
+  }
 
   ngOnInit() {
-    this.lojas$ = this.lojaService.getAll();
-  //  console.log(this.lojas$);
+    
+    //  this.lojas$ = this.lojaService.getAll();
+    //  console.log(this.lojas$);
   }
 
   addCar(i, p) {
-   this.prodService.addItem(p)
+    this.prodService.addItem(p)
   }
 
   // msg add carrinho
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-    //  header: 'OK',
+      //  header: 'OK',
       message: 'Adicionando ao carrinho',
       position: 'bottom',
       duration: 3000,
@@ -49,7 +52,7 @@ export class HomePage implements OnInit {
         {
           side: 'start',
           icon: 'cart',
-      //    text: 'Adicionando ao carrinho',
+          //    text: 'Adicionando ao carrinho',
           handler: () => {
             console.log('Favorite clicked');
           }
@@ -63,6 +66,31 @@ export class HomePage implements OnInit {
       ]
     });
     toast.present();
+  }
+
+  grita() {
+    switch (this.selectcategory) {
+      case "Carrefour":
+        this.selectcategory = "Carrefour";
+        this.lojas$ = this.lojaService.getCarrefour();
+        console.log("carre")
+        break;
+      case "Vianense":
+        this.selectcategory = "Vianense";
+        this.lojas$ = this.lojaService.getVianense();
+        console.log("vianense")
+        break;
+      case "Guanabara":
+        this.selectcategory = "Guanabara";
+        this.lojas$ = this.lojaService.getGuanabra();
+        console.log("Guanabara")
+        break;
+      case "Extra":
+        this.selectcategory = "Extra";
+        this.lojas$ = this.lojaService.getExtra();
+        console.log("Extra")
+        break;
+    }
   }
 }
 

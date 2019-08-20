@@ -17,10 +17,10 @@
       <ion-item class="arre">
         <ion-icon class="fundowhite" name="cart"></ion-icon>
         <ion-label class="fundowhite"> &nbsp; Seu supermercado escolhido é</ion-label>
-        <ion-select class="fundowhite" placeholder="Escolha um">
-          <ion-select-option value="Carrefour">Carrefour</ion-select-option>
+        <ion-select (ionChange)="grita()" [selectedText]="selectcategory" [(ngModel)]="selectcategory" ok-text="Ok" cancel-text="Voltar" class="fundowhite" placeholder="Escolha um">
+          <ion-select-option value="Carrefour" >Carrefour</ion-select-option>
           <ion-select-option value="Vianense">Vianense</ion-select-option>
-          <ion-select-option value="Guanabara">Guanabara</ion-select-option>
+          <ion-select-option value="Guanabara" selected>Guanabara</ion-select-option>
           <ion-select-option value="Extra">Extra</ion-select-option>
         </ion-select>
       </ion-item>
