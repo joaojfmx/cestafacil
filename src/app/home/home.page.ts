@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   protected lojas$: any;
   private produto$: Observable<any>;
   private id: string;
-  private selectcategory: anys;
+  private selectcategory: any;
 
   constructor(
     private activeRouter: ActivatedRoute,
@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     
-    //  this.lojas$ = this.lojaService.getAll();
+      this.lojas$ = this.lojaService.getGuanabra();
     //  console.log(this.lojas$);
   }
 
